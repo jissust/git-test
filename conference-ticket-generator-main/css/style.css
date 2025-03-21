@@ -1,0 +1,123 @@
+@font-face {
+  font-family: "Inconsolata";
+  src: url("../assets/fonts/static/Inconsolata-Bold.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Inconsolata";
+  src: url("../assets/fonts/static/inconsolata-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Inconsolata";
+  src: url("../assets/fonts/static/inconsolata-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Inconsolata";
+  src: url("../assets/fonts/static/inconsolata-ExtraBold.ttf")
+    format("truetype");
+  font-weight: 800;
+}
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  font-family: "Inconsolata", sans-serif;
+  background-image: url("../assets/images/background-desktop.png");
+  color: #ffffff;
+}
+main {
+  max-width: 855px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+h1 {
+  font-weight: 800;
+  text-align: center;
+  font-size: 61px;
+  margin: 21px 0 30px 0;
+}
+p {
+  font-weight: 700;
+  text-align: center;
+  font-size: 23px;
+}
+form {
+    max-width: 458px;
+    width: 100%;
+}
+.form-row {
+  display: grid;
+}
+.form-row input {
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid #ffffff;
+  background-color: transparent;
+}
+.form-input-file {
+  width: 100%;
+  height: 200px;
+  border: 2px dotted #ffffff;
+  border-radius: 10px;
+}
+.btn-primary {
+  height: 50px;
+  border-radius: 10px;
+  width: 100%;
+  text-align: center;
+  background-color: #f67464;
+  font-family: "Inconsolata", sans-serif;
+  font-weight: 700;
+}
+form label {
+    padding: 15px 0 12px 0;
+    font-size: 20px;
+    font-weight: 400;
+}
+.form-container-logo-input {
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+  width: fit-content;
+}
+.form-input-file {
+    position: relative;
+}
+.form-input-file input {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    opacity: 0;
+}
+.form-input-file__text {
+    margin:10px 0;
+    font-size: 12px;
+}
+.form-input-file input:hover{
+    cursor: pointer;
+}
+.form-input-file-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+}
