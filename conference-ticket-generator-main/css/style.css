@@ -1,27 +1,8 @@
 @font-face {
-  font-family: "Inconsolata";
-  src: url("../assets/fonts/static/Inconsolata-Bold.ttf") format("truetype");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "Inconsolata";
-  src: url("../assets/fonts/static/inconsolata-Medium.ttf") format("truetype");
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: "Inconsolata";
-  src: url("../assets/fonts/static/inconsolata-Bold.ttf") format("truetype");
-  font-weight: 700;
-}
-
-@font-face {
-  font-family: "Inconsolata";
-  src: url("../assets/fonts/static/inconsolata-ExtraBold.ttf")
-    format("truetype");
-  font-weight: 800;
-}
+    font-family: "Inconsolata";
+    src: url("../assets/fonts/Inconsolata-VariableFont_wdth\,wght.ttf") format("truetype");
+    font-weight: 100 900;
+  }
 body {
   margin: 0;
   padding: 0;
@@ -70,6 +51,7 @@ form {
   border-radius: 10px;
   border: 1px solid #ffffff;
   background-color: transparent;
+  padding-left: 14px;
 }
 .form-input-file {
   width: 100%;
@@ -111,6 +93,9 @@ form label {
 .form-input-file__text {
     margin:15px 0;
     font-size: 12px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
 .form-input-file input:hover{
     cursor: pointer;
