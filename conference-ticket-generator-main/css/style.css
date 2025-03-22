@@ -55,20 +55,21 @@ form {
   height: 50px;
   border-radius: 10px;
   border: 1px solid #ffffff;
-  background-color: transparent;
   padding-left: 14px;
   font-family: 'Inconsolata', sans-serif;
   font-size: 18px;
-  color: #ffffff;
+  color: #abaabc;
+  background: rgba(255, 255, 255, 0.1);
 }
 .form-row input::placeholder{
-    color: #ffffff;
+    color: #abaabc;
 }
 .form-input-file {
   width: 100%;
   height: 122px;
   border: 2px dashed #ffffff;
   border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
 }
 .btn-primary {
   border-radius: 10px;
