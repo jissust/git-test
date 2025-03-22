@@ -67,7 +67,7 @@ form {
 .form-input-file {
   width: 100%;
   height: 122px;
-  border: 2px dashed #ffffff;
+  border: 1px dashed #ffffff;
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.1);
 }
@@ -76,10 +76,13 @@ form {
   width: 100%;
   text-align: center;
   background-color: #f67464;
+  border: 1px solid #f67464;
   font-family: "Inconsolata", sans-serif;
   font-weight: 700;
   padding: 16px 0;
   font-size: 19px;
+  position: relative;
+  z-index: 10;
 }
 form label {
     padding: 15px 0 12px 0;
