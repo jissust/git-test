@@ -1,8 +1,9 @@
 @font-face {
-    font-family: "Inconsolata";
-    src: url("../assets/fonts/Inconsolata-VariableFont_wdth\,wght.ttf") format("truetype");
-    font-weight: 100 900;
-  }
+  font-family: "Inconsolata";
+  src: url("../assets/fonts/Inconsolata-VariableFont_wdth\,wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+}
 body {
   margin: 0;
   padding: 0;
@@ -21,7 +22,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-bottom:56px;
+  padding-bottom: 56px;
 }
 nav {
   display: flex;
@@ -43,26 +44,54 @@ p {
   margin: 0;
 }
 form {
-    max-width: 458px;
-    width: 100%;
-    padding: 35px 0 0 0;
+  max-width: 458px;
+  width: 100%;
+  padding: 35px 0 0 0;
 }
 .form-row {
   display: grid;
   position: relative;
 }
+.form-container-focus {
+    position: relative;
+}
 .form-row input {
   height: 50px;
   border-radius: 10px;
   border: 1px solid #ffffff;
-  padding-left: 14px;
-  font-family: 'Inconsolata', sans-serif;
+  font-family: "Inconsolata", sans-serif;
   font-size: 18px;
   color: #abaabc;
   background: rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 10;
+  width: -webkit-fill-available;
+  padding-left: 14px;
 }
-.form-row input::placeholder{
-    color: #abaabc;
+.border-focus {
+  border: 1px solid #ffffff;
+  width: 100%;
+  position: absolute;
+  bottom: -5px;
+  left: -6px;
+  z-index: 0;
+  height: 100%;
+  border-radius: 12px;
+  padding: 5px;
+  display: none;
+}
+.form-row input:focus {
+  outline: 0;
+}
+.form-row input:focus ~ .border-focus,
+.btn-primary:active ~ .border-focus {
+  display: block;
+}
+.form-row input::placeholder {
+  color: #abaabc;
+}
+.form-row input:hover {
+  cursor: pointer;
 }
 .form-input-file {
   width: 100%;
@@ -84,11 +113,14 @@ form {
   position: relative;
   z-index: 10;
 }
+.btn-primary:hover {
+  cursor: pointer;
+}
 form label {
-    padding: 15px 0 12px 0;
-    font-size: 20px;
-    font-weight: 400;
-    letter-spacing: -1px;
+  padding: 15px 0 12px 0;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: -1px;
 }
 .form-container-logo-input {
   border: 1px solid #ffffff;
@@ -97,25 +129,25 @@ form label {
   width: fit-content;
 }
 .form-input-file {
-    position: relative;
+  position: relative;
 }
 .form-input-file input {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 10;
-    opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  opacity: 0;
 }
 .form-input-file__text {
-    margin:12px 0;
-    font-size: 12px;
-    display: flex;
-    gap: 7px;
-    align-items: center;
+  margin: 12px 0;
+  font-size: 12px;
+  display: flex;
+  gap: 7px;
+  align-items: center;
 }
-.form-input-file input:hover{
-    cursor: pointer;
+.form-input-file input:hover {
+  cursor: pointer;
 }
 .form-input-file-content {
   display: flex;
@@ -126,14 +158,14 @@ form label {
   text-align: center;
   position: relative;
   z-index: 5;
-  gap:18px;
+  gap: 18px;
 }
-.form-input-file-content__text{
-    letter-spacing: 1px;
+.form-input-file-content__text {
+  letter-spacing: 1px;
 }
 .margin-bottom-first {
-    margin-bottom: 13px;
+  margin-bottom: 13px;
 }
 .margin-top-first {
-    margin-top: 9px;
+  margin-top: 9px;
 }
