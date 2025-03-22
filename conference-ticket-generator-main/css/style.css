@@ -52,11 +52,17 @@ form {
   border: 1px solid #ffffff;
   background-color: transparent;
   padding-left: 14px;
+  font-family: 'Inconsolata', sans-serif;
+  font-size: 18px;
+  color: #ffffff;
+}
+.form-row input::placeholder{
+    color: #ffffff;
 }
 .form-input-file {
   width: 100%;
   height: 122px;
-  border: 2px dotted #ffffff;
+  border: 2px dashed #ffffff;
   border-radius: 10px;
 }
 .btn-primary {
@@ -66,12 +72,14 @@ form {
   background-color: #f67464;
   font-family: "Inconsolata", sans-serif;
   font-weight: 700;
-  padding: 19px 0;
+  padding: 16px 0;
+  font-size: 19px;
 }
 form label {
     padding: 15px 0 12px 0;
     font-size: 20px;
     font-weight: 400;
+    letter-spacing: -1px;
 }
 .form-container-logo-input {
   border: 1px solid #ffffff;
@@ -91,10 +99,10 @@ form label {
     opacity: 0;
 }
 .form-input-file__text {
-    margin:15px 0;
+    margin:12px 0;
     font-size: 12px;
     display: flex;
-    gap: 10px;
+    gap: 7px;
     align-items: center;
 }
 .form-input-file input:hover{
@@ -115,8 +123,8 @@ form label {
     letter-spacing: 1px;
 }
 .margin-bottom-first {
-    margin-bottom: 11px;
+    margin-bottom: 13px;
 }
 .margin-top-first {
-    margin-top: 14px;
+    margin-top: 9px;
 }
