@@ -78,14 +78,15 @@ form {
   height: 100%;
   border-radius: 12px;
   padding: 5px;
-  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 .form-row input:focus {
   outline: 0;
 }
 .form-row input:focus ~ .border-focus,
 .btn-primary:active ~ .border-focus {
-  display: block;
+  opacity: 1;
 }
 .form-row input::placeholder {
   color: #abaabc;
