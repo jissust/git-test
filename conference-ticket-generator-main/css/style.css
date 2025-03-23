@@ -27,6 +27,8 @@ main {
   justify-content: center;
   padding-bottom: 56px;
   padding: 0 16px;
+  margin: 0 0 113px 0;
+  overflow: hidden;
 }
 nav {
   display: flex;
@@ -192,33 +194,50 @@ form label {
 }
 .pattern-circle {
     position: absolute; 
-    top: -83px; 
-    left: 44px
-}
-.pattern-circle-2 {
-    position: absolute; 
-    top: -23px; 
-    right: -206px
+    top: -30px;
+    left: -21px;
+    max-width: 106px;
 }
 .pattern-squiggly-line-top {
     position: absolute; 
-    top: 75px; 
-    right: 0
+    top: 23px; 
+    right: 0;
+    max-width: 115px;
 }
 .pattern-squiggly-line-bottom-desktop {
     position: absolute; 
-    bottom: 0; 
-    left: 0
+    left: -47px;
+    bottom: 0px;
+    max-width: 350px;
 }
 
-.pattern-circle,
-.pattern-circle-2,
-
-.pattern-squiggly-line-bottom-desktop {
-    display: none;
+.pattern-circle-2 {
+    position: absolute;
+    top: 80px;
+    right: -44px;
+    max-width: 100px;
 }
 
 @media (min-width: 576px) { 
+    .pattern-squiggly-line-top { 
+        top: 75px; 
+        max-width: 446px;
+    }
+    .pattern-circle {
+        top: -83px; 
+        left: -75px;
+        max-width: 217px;
+    }
+    .pattern-circle-2 {
+        position: absolute; 
+        top: -23px; 
+        right: -206px;
+        max-width: 217px;
+    }
+    .pattern-squiggly-line-bottom-desktop { 
+        left: 0;
+        max-width: 825px;
+    }
     body {
         background-image: url("../assets/images/background-tablet.png");
     }
@@ -249,11 +268,5 @@ form label {
     main {
         max-width: 855px;
         padding: 0;
-    }
-    .pattern-circle,
-    .pattern-circle-2,
-    .pattern-squiggly-line-top,
-    .pattern-squiggly-line-bottom-desktop {
-        display: block;
     }
 }
