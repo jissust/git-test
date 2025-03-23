@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import './App.css'
 import patternLines from './assets/images/pattern-lines.svg'
 import patternCircle from './assets/images/pattern-circle.svg'
@@ -9,7 +9,25 @@ import logoFull from './assets/images/logo-full.svg'
 import iconInfo from './assets/images/icon-info.svg'
 
 function App() {
-  const [count, setCount] = useState(0)
+  
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    github: "",
+    file: null,
+  });
+
+  const [errors, setErrors] = useState({});
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.eventPreventDefault()
+    console.log(formData)
+  }
 
   return (
     <>
@@ -40,7 +58,7 @@ function App() {
       <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
       <p>Secure your spot at next year's biggest coding conference.</p>
 
-      <form action="">
+      <form onSubmit={handleSubmit}>
         <div className="form-row">
           <label htmlFor=""> Upload Avatar </label>
           <div className="form-container-focus">
@@ -53,7 +71,7 @@ function App() {
                 <div>Drag and drop or click to upload</div>
               </div>
             </div>
-            <input type="file" name="" />
+            <input type="file" name=""  />
           </div>
           <div className="border-focus"></div>
         </div>
@@ -65,7 +83,7 @@ function App() {
         <div className="form-row margin-bottom-first">
           <label htmlFor=""> Full Name </label>
           <div className="form-container-focus">
-            <input type="text" name="" />
+            <input type="text" name="name" value={formData.name} onChange={handleChange} />
             <div className="border-focus"></div>
           </div>
           <img
@@ -77,19 +95,19 @@ function App() {
         <div className="form-row margin-bottom-first">
           <label htmlFor=""> Email Address </label>
           <div className="form-container-focus">
-            <input type="text" name="" placeholder="example@email.com" />
+            <input type="text" name="email" value={formData.email} placeholder="example@email.com" onChange={handleChange} />
             <div className="border-focus"></div>
           </div>
         </div>
         <div className="form-row margin-bottom-first">
           <label htmlFor=""> GitHub Username </label>
           <div className="form-container-focus">
-            <input type="text" name="" placeholder="@yourusername" />
+            <input type="text" name="github" value={formData.github} placeholder="@yourusername" onChange={handleChange} />
             <div className="border-focus"></div>
           </div>
         </div>
         <div className="form-container-focus margin-top-second">
-          <button className="btn-primary">
+          <button  className="btn-primary">
             Generate My Ticket
           </button>
           <div className="border-focus"></div>
