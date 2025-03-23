@@ -1,130 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
-    <link rel="stylesheet" href="css/style.css" rel="stylesheet" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./assets/images/favicon-32x32.png"
-    />
-
-    <title>Frontend Mentor | Conference ticket generator</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
+    <title>Vite + React + TS</title>
   </head>
   <body>
-    <img
-    class="pattern-lines"
-      src="assets/images/pattern-lines.svg"
-      alt=""
-    />
-    <img
-    class="pattern-circle"
-      src="assets/images/pattern-circle.svg"
-      alt=""
-    />
-    <img
-    class="pattern-squiggly-line-top"
-      src="assets/images/pattern-squiggly-line-top.svg"
-      alt=""
-    />
-    <img
-    class="pattern-squiggly-line-bottom-desktop"
-      src="assets/images/pattern-squiggly-line-bottom-desktop.svg"
-      alt=""
-    />
-    <main>
-      <nav>
-        <img src="assets/images/logo-full.svg" alt="" />
-      </nav>
-      <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
-      <p>Secure your spot at next year's biggest coding conference.</p>
-
-      <form action="">
-        <div class="form-row">
-          <label for=""> Upload Avatar </label>
-          <div class="form-container-focus">
-          <div class="form-input-file">
-            <div class="form-input-file-content">
-              <div class="form-container-logo-input">
-                <img src="assets/images/icon-upload.svg" alt="" />
-              </div>
-              <div class="form-input-file-content__text">
-                <div>Drag and drop or click to upload</div>
-              </div>
-            </div>
-            <input type="file" name="" />
-          </div>
-          <div class="border-focus"></div>
-        </div>
-          <div class="form-input-file__text">
-            <img src="assets/images/icon-info.svg" alt="" />
-            <div>Upload your photo (JPG or PNG, max size: 500KB).</div>
-          </div>
-        </div>
-        <div class="form-row margin-bottom-first">
-          <label for=""> Full Name </label>
-          <div class="form-container-focus">
-            <input type="text" name="" />
-            <div class="border-focus"></div>
-          </div>
-          <img
-          class="pattern-circle-2"
-            src="assets/images/pattern-circle.svg"
-            alt=""
-          />
-        </div>
-        <div class="form-row margin-bottom-first">
-          <label for=""> Email Address </label>
-          <div class="form-container-focus">
-            <input type="text" name="" placeholder="example@email.com" />
-            <div class="border-focus"></div>
-          </div>
-        </div>
-        <div class="form-row margin-bottom-first">
-          <label for=""> GitHub Username </label>
-          <div class="form-container-focus">
-            <input type="text" name="" placeholder="@yourusername" />
-            <div class="border-focus"></div>
-          </div>
-        </div>
-        <div class="form-container-focus margin-top-second">
-          <button class="btn-primary">
-            Generate My Ticket
-          </button>
-          <div class="border-focus"></div>
-        </div>
-      </form>
-
-      <!-- Generated tickets starts -->
-      <div style="display: none">
-        Congrats,
-        <!-- Full Name -->! Your ticket is ready. We've emailed your ticket to
-        <!-- Email Address -->
-        and will send updates in the run up to the event. Coding Conf Jan 31,
-        2025 / Austin, TX
-      </div>
-
-      <!-- Generated tickets ends -->
-
-      <div class="attribution" style="display: none">
-        Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a
-        >. Coded by <a href="#">Your Name Here</a>.
-      </div>
-    </main>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
