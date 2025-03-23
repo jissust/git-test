@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="css/style.css" rel="stylesheet" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Conference ticket generator</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <img class="pattern-lines" src="assets/images/pattern-lines.svg" alt="" />
+    <img class="pattern-circle" src="assets/images/pattern-circle.svg" alt="" />
+    <img
+      class="pattern-squiggly-line-top"
+      src="assets/images/pattern-squiggly-line-top.svg"
+      alt=""
+    />
+    <img
+      class="pattern-squiggly-line-bottom-desktop"
+      src="assets/images/pattern-squiggly-line-bottom-desktop.svg"
+      alt=""
+    />
+    <main>
+      <nav>
+        <img src="assets/images/logo-full.svg" alt="" />
+      </nav>
+      <h1>Congrats, <span>Jonatan Kristof</span>! Your ticket is ready.</h1>
+      <p>
+        We've emailed your ticket to<br />
+        <span>jonatan@email.com </span> and will send updates in <br />
+        the run up to the event.
+      </p>
+      <div class="ticket">
+        <img
+          class="ticket-image"
+          src="assets/images/pattern-ticket.svg"
+          alt=""
+        />
+        <div class="ticket-container-number">
+          <div class="ticket-number">#01609</div>
+        </div>
+        <div class="ticket-body">
+          <div class="ticket-body-row-1">
+            <div class="ticket-body-row-1-col-1">
+              <img src="assets/images/logo-mark.svg" alt="" />
+              <div>Coding Conf</div>
+            </div>
+            <div class="ticket-body-row-1-col-2">
+              <img src="assets/images/logo-mark.svg" alt="" style="opacity: 0;" />
+              <span>Jan 31, 2025 / Austin, TX</span>
+            </div>
+          </div>
+          <div class="ticket-body-row-2">
+            <div class="ticket-body-row-2-col-1">
+              <img src="assets/images/image-avatar.jpg" alt="" />
+            </div>
+            <div class="ticket-body-row-2-col-2">
+              <div class="ticket-body-row-2-col-2-name">Jonatan Kristof</div>
+              <div class="ticket-body-row-2-col-2-email"> 
+                <img src="assets/images/icon-github.svg" alt=""> 
+                <span>@jonatankristof0101</span>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Generated tickets starts -->
+      <div style="display: none">
+        Congrats,
+        <!-- Full Name -->! Your ticket is ready. We've emailed your ticket to
+        <!-- Email Address -->
+        and will send updates in the run up to the event. Coding Conf Jan 31,
+        2025 / Austin, TX
+      </div>
+
+      <!-- Generated tickets ends -->
+
+      <div class="attribution" style="display: none">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a
+        >. Coded by <a href="#">Your Name Here</a>.
+      </div>
+    </main>
+  </body>
+</html>
