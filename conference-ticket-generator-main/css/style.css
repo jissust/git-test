@@ -190,7 +190,7 @@ form label {
 .pattern-lines {
     position: absolute; 
     top: 0; 
-    width: 100%
+    width: 100%;
 }
 .pattern-circle {
     position: absolute; 
@@ -227,6 +227,9 @@ form label {
         top: -83px; 
         left: -75px;
         max-width: 217px;
+    }
+    .pattern-lines {
+        width: auto;
     }
     .pattern-circle-2 {
         position: absolute; 
