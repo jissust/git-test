@@ -225,7 +225,17 @@ form label {
   right: -44px;
   max-width: 100px;
 }
-
+.error {
+  color: #c98286;
+  font-size: 0.75rem;
+  font-weight: 400;
+  font-family: 'Inconsolata';
+  text-align: left;
+  padding: 0 0 0 6px;
+}
+.border-error {
+  border: 1px solid #c98286 !important;
+}
 @media (min-width: 576px) {
   .pattern-squiggly-line-top {
     top: 75px;
