@@ -136,8 +136,12 @@ function App() {
               <div className="form-input-file-container-btn">
                 {previewImage ? (
                   <>
-                    <button className="btn-secondary" onClick={removeImage}>Remove image</button>
-                    <button className="btn-secondary" onClick={changeImage}>Change image</button>
+                    <button className="btn-secondary" onClick={removeImage}>
+                      Remove image
+                    </button>
+                    <button className="btn-secondary" onClick={changeImage}>
+                      Change image
+                    </button>
                   </>
                 ) : (
                   <div className="form-input-file-content__text">
