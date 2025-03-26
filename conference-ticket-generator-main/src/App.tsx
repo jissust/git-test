@@ -18,10 +18,14 @@ function App() {
 
   const [errors, setErrors] = useState({});
 
-  const handleChange = (e:React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
+
+  const [previewImage, setPreviewImage] = useState<string | null>(null);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target?.files?.[0];
@@ -50,6 +54,9 @@ function App() {
       // Si pasa todas las validaciones:
       setErrors((prev) => ({ ...prev, file: "" }));
       setFormData({ ...formData, file });
+
+      const imageUrl = URL.createObjectURL(file);
+      setPreviewImage(imageUrl);
     }
   };
 
@@ -65,13 +72,21 @@ function App() {
     return Object.keys(tempErrors).length === 0;
   };
 
-  const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (validate()) {
       console.log(formData);
     } else {
       console.log(errors);
     }
+  };
+
+  const removeImage = () => {
+    alert("remove image");
+  };
+
+  const changeImage = () => {
+    alert("change image");
   };
 
   return (
@@ -98,19 +113,38 @@ function App() {
         <form onSubmit={handleSubmit}>
           <div className="form-row">
             <label htmlFor=""> Upload Avatar </label>
-            <div className="form-container-focus">
-              <div className="form-input-file">
-                <div className="form-input-file-content">
-                  <div className="form-container-logo-input">
-                    <img src={iconUpload} alt="" />
+            <div className="form-row-container">
+              <div className="form-container-focus">
+                <div className="form-input-file">
+                  <div className="form-input-file-content">
+                    <div className="form-container-logo-input">
+                      {previewImage ? (
+                        <img
+                          src={previewImage}
+                          alt="Preview"
+                          className="preview-image"
+                        />
+                      ) : (
+                        <img src={iconUpload} alt="Upload Icon" />
+                      )}
+                    </div>
                   </div>
+                  <input type="file" name="file" onChange={handleFileChange} />
+                </div>
+                <div className="border-focus"></div>
+              </div>
+              <div className="form-input-file-container-btn">
+                {previewImage ? (
+                  <>
+                    <button className="btn-secondary" onClick={removeImage}>Remove image</button>
+                    <button className="btn-secondary" onClick={changeImage}>Change image</button>
+                  </>
+                ) : (
                   <div className="form-input-file-content__text">
                     <div>Drag and drop or click to upload</div>
                   </div>
-                </div>
-                <input type="file" name="file" onChange={handleFileChange} />
+                )}
               </div>
-              <div className="border-focus"></div>
             </div>
             <div
               className={`form-input-file__text ${errors.file ? "error" : ""}`}

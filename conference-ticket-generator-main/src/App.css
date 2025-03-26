@@ -134,6 +134,19 @@ form {
 .btn-primary:hover {
   cursor: pointer;
 }
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  padding: 5px 8px;
+  border-radius: 5px;
+  font-family: 'Inconsolata';
+}
+.btn-secondary:focus,
+.btn-secondary:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
 form label {
   padding: 9px 5px;
   font-size: 1.25rem; /*18px*/
@@ -168,16 +181,28 @@ form label {
 .form-input-file input:hover {
   cursor: pointer;
 }
+.form-input-file-container-btn {
+  display: flex;
+  gap: 11px;
+  justify-content: center;
+  position: absolute;
+  bottom: 28px;
+  width: 100%;
+  z-index: 30;
+}
+.form-row-container {
+  position: relative;
+}
 .form-input-file-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   height: 100%;
   text-align: center;
   position: relative;
   z-index: 5;
   gap: 18px;
+  padding: 15px 0 0 0;
 }
 .form-input-file-content__text {
   letter-spacing: 1px;
@@ -235,6 +260,9 @@ form label {
 }
 .border-error {
   border: 1px solid #c98286 !important;
+}
+.preview-image {
+  max-width: 30px;
 }
 @media (min-width: 576px) {
   .pattern-squiggly-line-top {
