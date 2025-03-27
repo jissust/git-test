@@ -263,6 +263,7 @@ form label {
 }
 .preview-image {
   max-width: 30px;
+  max-height: 30px;
 }
 @media (min-width: 576px) {
   .pattern-squiggly-line-top {
