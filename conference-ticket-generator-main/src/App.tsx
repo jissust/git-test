@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./App.css";
 import patternLines from "./assets/images/pattern-lines.svg";
 import patternCircle from "./assets/images/pattern-circle.svg";
@@ -16,7 +16,11 @@ function App() {
     file: null,
   });
 
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState({
+    name: "",
+    email: "",
+    file: "",
+  });
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -29,6 +33,11 @@ function App() {
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target?.files?.[0];
+
+    if (!file) {
+      setPreviewImage(null);
+      return;
+    }
 
     if (file) {
       const validTypes = ["image/jpeg", "image/jpg", "image/png"];
@@ -61,7 +70,11 @@ function App() {
   };
 
   const validate = () => {
-    const tempErrors = {};
+    const tempErrors = {
+      name: "",
+      email: "",
+      file: "",
+    };
     if (!formData.name.match(/^[A-Za-z\s]+$/))
       tempErrors.name = "Name should contain only letters";
     if (formData.name.length == 0) tempErrors.name = "Name cannot be empty";
@@ -80,13 +93,19 @@ function App() {
       console.log(errors);
     }
   };
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const removeImage = () => {
-    alert("remove image");
+  const removeImage = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setPreviewImage(null);
+    fileInputRef.current.value = null;
   };
 
-  const changeImage = () => {
-    alert("change image");
+  const changeImage = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (fileInputRef.current) {
+      fileInputRef.current.click();
+    }
   };
 
   return (
@@ -129,7 +148,12 @@ function App() {
                       )}
                     </div>
                   </div>
-                  <input type="file" name="file" onChange={handleFileChange} />
+                  <input
+                    type="file"
+                    name="file"
+                    ref={fileInputRef}
+                    onChange={handleFileChange}
+                  />
                 </div>
                 <div className="border-focus"></div>
               </div>
