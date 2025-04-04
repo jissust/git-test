@@ -23,6 +23,7 @@ function Form() {
     name: "",
     email: "",
     file: "",
+    github:""
   });
 
   const [send, setSend] = useState(false);
@@ -82,7 +83,9 @@ function Form() {
     if (!formData.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/))
       tempErrors.email = "Invalid email format";
     if (formData.email.length == 0) tempErrors.email = "Email cannot be empty";
-    setErrors(tempErrors);
+    if (formData.github.length > 0 && !formData.github.match(/^@\w+$/)) 
+        tempErrors.github = "GitHub must start with @";     
+        setErrors(tempErrors);
     return Object.keys(tempErrors).length === 0;
   };
 
@@ -234,12 +237,14 @@ function Form() {
                   <input
                     type="text"
                     name="github"
-                    value={formData.github}
+                    value={formData .github}
                     placeholder="@yourusername"
                     onChange={handleChange}
+                    className={errors.github ? "border-error": ""}
                   />
                   <div className="border-focus"></div>
                 </div>
+                {errors.github && <p className="error">{errors.github}</p>}
               </div>
               <div className="form-container-focus margin-top-second">
                 <button className="btn-primary">Generate My Ticket</button>
