@@ -1,11 +1,11 @@
 import "./App.css";
-import Form from "./components/Form/Form.tsx";
+import Content from "./components/Content/Content.tsx";
 
 function App() {
   
   return (
     <>
-    <Form />
+    <Content />
     </>    
   );
 }
