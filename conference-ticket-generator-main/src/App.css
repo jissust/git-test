@@ -321,7 +321,12 @@ form label {
   }
 }
 
-/*ticker*/
+/* ticket */
+.ticket {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 p span {
   color: #f67464;
 }
