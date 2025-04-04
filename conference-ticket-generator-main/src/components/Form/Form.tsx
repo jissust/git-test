@@ -111,6 +111,15 @@ function Form() {
     }
   };
 
+  const today = new Date();
+  const formattedDate = today.toLocaleDateString("en-US", {
+      month:"short",
+      day:"2-digit",
+      year:"numeric"
+  })
+
+  const userLocation = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  
   return (
     <>
       <img className="pattern-lines" src={patternLines} alt="" />
@@ -267,7 +276,7 @@ function Form() {
                       alt=""
                       style={{ opacity: 0 }}
                     />
-                    <span>Jan 31, 2025 / Austin, TX</span>
+                    <span>{formattedDate} / {userLocation}</span>
                   </div>
                 </div>
                 <div className="ticket-body-row-2">
