@@ -326,6 +326,16 @@ form label {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+}
+.icon-arrow-left {
+  position: fixed;
+  bottom: 5%;
+  left: 5%;
+  background:
+  linear-gradient(    100deg,    rgba(246, 116, 100, 1) 15%,    rgba(255, 255, 255, 1) 160%  );
+  padding: 10px;
+  border-radius: 50%;
 }
 p span {
   color: #f67464;
@@ -408,10 +418,13 @@ h1 span {
 }
 .ticket-body-row-2-col-1 {
   max-width: 47px;
+  max-height: 47px;
 }
 .ticket-body-row-2-col-1 img {
   width: 100%;
   border-radius: 10px;
+  height: 100%;
+  object-fit: cover;
 }
 .ticket-container-number {
   position: absolute;
@@ -460,6 +473,7 @@ h1 span {
   }
   .ticket-body-row-2-col-1 {
     max-width: 80px;
+    max-height: 80px;
   }
   .ticket-body-row-2-col-2 {
     gap: 6px;

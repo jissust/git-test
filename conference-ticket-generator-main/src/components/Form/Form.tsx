@@ -5,7 +5,7 @@ import patternSquigglyLineTop from "../../assets/images/pattern-squiggly-line-to
 import patterSquigglyLineBottomDesktop from "../../assets/images/pattern-squiggly-line-bottom-desktop.svg";
 import iconUpload from "../../assets/images/icon-upload.svg";
 import logoFull from "../../assets/images/logo-full.svg";
-import { IconInfo } from "../../components/Icons";
+import { IconInfo, IconArrowLeft } from "../../components/Icons";
 import iconGitHub from "../../assets/images/icon-github.svg";
 import patterTicket from "../../assets/images/pattern-ticket.svg";
 import logoMark from "../../assets/images/logo-mark.svg";
@@ -23,7 +23,7 @@ function Form() {
     name: "",
     email: "",
     file: "",
-    github:""
+    github: "",
   });
 
   const [send, setSend] = useState(false);
@@ -83,9 +83,9 @@ function Form() {
     if (!formData.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/))
       tempErrors.email = "Invalid email format";
     if (formData.email.length == 0) tempErrors.email = "Email cannot be empty";
-    if (formData.github.length > 0 && !formData.github.match(/^@\w+$/)) 
-        tempErrors.github = "GitHub must start with @";     
-        setErrors(tempErrors);
+    if (formData.github.length > 0 && !formData.github.match(/^@\w+$/))
+      tempErrors.github = "GitHub must start with @";
+    setErrors(tempErrors);
     return Object.keys(tempErrors).length === 0;
   };
 
@@ -114,15 +114,21 @@ function Form() {
     }
   };
 
+  const backForm = () => {
+    if(send){
+        setSend(false)
+    }
+  }
+
   const today = new Date();
   const formattedDate = today.toLocaleDateString("en-US", {
-      month:"short",
-      day:"2-digit",
-      year:"numeric"
-  })
+    month: "short",
+    day: "2-digit",
+    year: "numeric",
+  });
 
   const userLocation = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  
+
   return (
     <>
       <img className="pattern-lines" src={patternLines} alt="" />
@@ -237,10 +243,10 @@ function Form() {
                   <input
                     type="text"
                     name="github"
-                    value={formData .github}
+                    value={formData.github}
                     placeholder="@yourusername"
                     onChange={handleChange}
-                    className={errors.github ? "border-error": ""}
+                    className={errors.github ? "border-error" : ""}
                   />
                   <div className="border-focus"></div>
                 </div>
@@ -254,6 +260,9 @@ function Form() {
           </>
         ) : (
           <div className="ticket">
+            <div className="icon-arrow-left" onClick={backForm}>
+              <IconArrowLeft/>
+            </div>
             <h1>
               Congrats, <span>{formData.name}</span>! Your ticket is ready.
             </h1>
@@ -281,7 +290,9 @@ function Form() {
                       alt=""
                       style={{ opacity: 0 }}
                     />
-                    <span>{formattedDate} / {userLocation}</span>
+                    <span>
+                      {formattedDate} / {userLocation}
+                    </span>
                   </div>
                 </div>
                 <div className="ticket-body-row-2">
@@ -293,10 +304,10 @@ function Form() {
                       {formData.name}
                     </div>
                     {formData.github.length > 1 && (
-                    <div className="ticket-body-row-2-col-2-email">
-                      <img src={iconGitHub} alt="" />
-                      <span>{formData.github}</span>
-                    </div>
+                      <div className="ticket-body-row-2-col-2-email">
+                        <img src={iconGitHub} alt="" />
+                        <span>{formData.github}</span>
+                      </div>
                     )}
                   </div>
                 </div>
