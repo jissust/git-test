@@ -292,10 +292,12 @@ function Form() {
                     <div className="ticket-body-row-2-col-2-name">
                       {formData.name}
                     </div>
+                    {formData.github.length > 1 && (
                     <div className="ticket-body-row-2-col-2-email">
                       <img src={iconGitHub} alt="" />
                       <span>{formData.github}</span>
                     </div>
+                    )}
                   </div>
                 </div>
               </div>
