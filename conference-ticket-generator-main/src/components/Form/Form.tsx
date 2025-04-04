@@ -4,12 +4,12 @@ import patternCircle from "../../assets/images/pattern-circle.svg";
 import patternSquigglyLineTop from "../../assets/images/pattern-squiggly-line-top.svg";
 import patterSquigglyLineBottomDesktop from "../../assets/images/pattern-squiggly-line-bottom-desktop.svg";
 import iconUpload from "../../assets/images/icon-upload.svg";
-import logoFull from "../../assets/images/logo-full.svg";
 import { IconInfo, IconArrowLeft } from "../../components/Icons";
 import iconGitHub from "../../assets/images/icon-github.svg";
 import patterTicket from "../../assets/images/pattern-ticket.svg";
 import logoMark from "../../assets/images/logo-mark.svg";
 import userProfile from "../../assets/images/user-profile.jpg";
+import Nav from "../Nav/Nav";
 
 function Form() {
   const [formData, setFormData] = useState({
@@ -144,9 +144,7 @@ function Form() {
         alt=""
       />
       <main>
-        <nav>
-          <img src={logoFull} alt="" />
-        </nav>
+        <Nav />
         {!send ? (
           <>
             <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>

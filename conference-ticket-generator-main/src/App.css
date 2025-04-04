@@ -33,14 +33,6 @@ main {
   margin: 0 0 113px 0;
   overflow: hidden;
 }
-nav {
-  display: flex;
-  justify-content: center;
-  padding: 33px 0;
-}
-nav img {
-  max-width: 168px;
-}
 h1 {
   font-weight: 800;
   text-align: center;
@@ -140,7 +132,7 @@ form {
   color: white;
   padding: 5px 8px;
   border-radius: 5px;
-  font-family: 'Inconsolata';
+  font-family: "Inconsolata";
 }
 .btn-secondary:focus,
 .btn-secondary:hover {
@@ -254,7 +246,7 @@ form label {
   color: #c98286;
   font-size: 0.75rem;
   font-weight: 400;
-  font-family: 'Inconsolata';
+  font-family: "Inconsolata";
   text-align: left;
   padding: 0 0 0 6px;
 }
@@ -291,12 +283,6 @@ form label {
   body {
     background-image: url("./assets/images/background-tablet.png");
   }
-  nav {
-    padding: 40px 0;
-  }
-  nav img {
-    max-width: 209px;
-  }
   h1 {
     font-size: 3.8125rem; /*61px*/
     margin: 21px 0;
@@ -332,8 +318,11 @@ form label {
   position: fixed;
   bottom: 5%;
   left: 5%;
-  background:
-  linear-gradient(    100deg,    rgba(246, 116, 100, 1) 15%,    rgba(255, 255, 255, 1) 160%  );
+  background: linear-gradient(
+    100deg,
+    rgba(246, 116, 100, 1) 15%,
+    rgba(255, 255, 255, 1) 160%
+  );
   padding: 10px;
   border-radius: 50%;
 }
