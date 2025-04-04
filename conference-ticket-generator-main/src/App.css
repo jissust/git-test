@@ -337,6 +337,9 @@ form label {
   padding: 10px;
   border-radius: 50%;
 }
+.icon-arrow-left:hover {
+  cursor: pointer;
+}
 p span {
   color: #f67464;
 }
