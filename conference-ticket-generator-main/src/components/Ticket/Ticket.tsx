@@ -4,6 +4,7 @@ import logoMark from "../../assets/images/logo-mark.svg";
 import userProfile from "../../assets/images/user-profile.jpg";
 import iconGitHub from "../../assets/images/icon-github.svg";
 import patternCircle from "../../assets/images/pattern-circle.svg";
+import "./Ticket.css"
 
 function Ticket({ formData, previewImage, backForm }) {
     const today = new Date();

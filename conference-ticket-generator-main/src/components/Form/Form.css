@@ -111,11 +111,26 @@ form label {
   color: #abaabc;
 }
 .form-row-container {
-    position: relative;
-  }
-  .form-container-logo-input {
-    border: 1px solid #ffffff;
-    border-radius: 10px;
-    padding: 8px;
-    width: fit-content;
-  }
+  position: relative;
+}
+.form-container-logo-input {
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  padding: 8px;
+  width: fit-content;
+}
+.error {
+  color: #c98286;
+  font-size: 0.75rem;
+  font-weight: 400;
+  font-family: "Inconsolata";
+  text-align: left;
+  padding: 0 0 0 6px;
+}
+.border-error {
+  border: 1px solid #c98286 !important;
+}
+.preview-image {
+  max-width: 30px;
+  max-height: 30px;
+}
