@@ -6,7 +6,19 @@ import iconGitHub from "../../assets/images/icon-github.svg";
 import patternCircle from "../../assets/images/pattern-circle.svg";
 import "./Ticket.css"
 
-function Ticket({ formData, previewImage, backForm }) {
+interface TicketProp {
+  formData: {
+    name: string;
+    email: string;
+    github: string;
+    file: File | null;
+  };
+  previewImage: string | null;
+  backForm: (e: React.FormEvent<HTMLFormElement>) => void; 
+}
+
+
+function Ticket({ formData, previewImage, backForm }:TicketProp) {
     const today = new Date();
     const formattedDate = today.toLocaleDateString("en-US", {
       month: "short",

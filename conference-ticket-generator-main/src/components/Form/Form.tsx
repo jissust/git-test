@@ -3,7 +3,32 @@ import { IconInfo } from "../../components/Icons";
 import patternCircle from "../../assets/images/pattern-circle.svg";
 import "./Form.css"
 
-function Form({formData, errors, previewImage, handleChange, handleFileChange, removeImage, changeImage, fileInputRef, handleSubmit}) {
+interface FormProps {
+  formData: {
+    name: string;
+    email: string;
+    github: string;
+    file: File | null;
+  };
+  errors: {
+    name?: string;
+    email?: string;
+    github?: string;
+    file?: string;
+  };
+  previewImage: string | null;
+
+  handleChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  handleFileChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  removeImage: (e: React.FormEvent<HTMLFormElement>) => void;
+  changeImage: (e: React.FormEvent<HTMLFormElement>) => void;
+  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+
+  fileInputRef: React.RefObject<HTMLInputElement>;
+}
+
+function Form({formData, errors, previewImage, handleChange, handleFileChange, removeImage, changeImage, fileInputRef, handleSubmit}:FormProps) {
+  
   return (
     <>
       <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
