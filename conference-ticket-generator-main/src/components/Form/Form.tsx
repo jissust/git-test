@@ -1,6 +1,7 @@
 import iconUpload from "../../assets/images/icon-upload.svg";
 import { IconInfo } from "../../components/Icons";
 import patternCircle from "../../assets/images/pattern-circle.svg";
+import "./Form.css"
 
 function Form({formData, errors, previewImage, handleChange, handleFileChange, removeImage, changeImage, fileInputRef, handleSubmit}) {
   return (
