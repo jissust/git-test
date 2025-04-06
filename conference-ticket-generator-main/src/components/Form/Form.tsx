@@ -20,11 +20,11 @@ interface FormProps {
 
   handleChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   handleFileChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  removeImage: (e: React.FormEvent<HTMLFormElement>) => void;
-  changeImage: (e: React.FormEvent<HTMLFormElement>) => void;
+  removeImage: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  changeImage: (e: React.MouseEvent<HTMLButtonElement>) => void;
   handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
 
-  fileInputRef: React.RefObject<HTMLInputElement>;
+  fileInputRef: React.RefObject<HTMLInputElement | null>;
 }
 
 function Form({formData, errors, previewImage, handleChange, handleFileChange, removeImage, changeImage, fileInputRef, handleSubmit}:FormProps) {

@@ -65,45 +65,69 @@ function Content() {
       // Si pasa todas las validaciones:
       setErrors((prev) => ({ ...prev, file: "" }));
       const imageUrl = URL.createObjectURL(file);
-      setFormData({ ...formData, file });
+      setFormData({ ...formData, file: null });
 
       setPreviewImage(imageUrl);
     }
   };
 
   const validate = () => {
-    const tempErrors = {};
-    if (!formData.name.match(/^[A-Za-z\s]+$/))
+    const tempErrors = {
+      name: '',
+      email: '',
+      github: '',
+      file: ''
+    };
+    let booleanValidate = true;
+
+    if (!formData.name.match(/^[A-Za-z\s]+$/)){
       tempErrors.name = "Name should contain only letters";
-    if (formData.name.length == 0) tempErrors.name = "Name cannot be empty";
-    if (!formData.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/))
+      booleanValidate = false;
+    }
+      
+    if (formData.name.length == 0) {
+      tempErrors.name = "Name cannot be empty";
+      booleanValidate = false;
+    }
+    if (!formData.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)){
       tempErrors.email = "Invalid email format";
-    if (formData.email.length == 0) tempErrors.email = "Email cannot be empty";
-    if (formData.github.length > 0 && !formData.github.match(/^@\w+$/))
+      booleanValidate = false;
+    }
+    if (formData.email.length == 0) {
+      tempErrors.email = "Email cannot be empty";
+      booleanValidate = false;
+    }
+    if (formData.github.length > 0 && !formData.github.match(/^@\w+$/)){
       tempErrors.github = "GitHub must start with @";
+      booleanValidate = false;
+    }
+      
     setErrors(tempErrors);
-    return Object.keys(tempErrors).length === 0;
+    return booleanValidate;
+    //return Object.keys(tempErrors).length === 0;
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (validate()) {
-      console.log(formData);
+      //console.log(formData);
       setSend(true);
     } else {
-      console.log(errors);
+      //console.log(errors);
     }
   };
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const removeImage = (e: React.FormEvent<HTMLFormElement>) => {
+  const removeImage = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setPreviewImage(null);
-    fileInputRef.current.value = null;
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
+    }
   };
 
-  const changeImage = (e: React.FormEvent<HTMLFormElement>) => {
+  const changeImage = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (fileInputRef.current) {
       fileInputRef.current.click();

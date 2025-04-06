@@ -14,7 +14,7 @@ interface TicketProp {
     file: File | null;
   };
   previewImage: string | null;
-  backForm: (e: React.FormEvent<HTMLFormElement>) => void; 
+  backForm: () => void; 
 }
 
 
