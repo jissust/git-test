@@ -1,9 +1,0 @@
-[[redirects]]
-  from = "/conference-ticket-generator-main/*"
-  to = "/conference-ticket-generator-main/dist/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/qr-code-component-main/*"
-  to = "/qr-code-component-main/dist/index.html"
-  status = 200
